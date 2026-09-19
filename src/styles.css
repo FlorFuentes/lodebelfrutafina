@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Pacifico&display=swap');
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+  --blue: #092c50;
+  --blue-light: #dcecf7;
+  --pink: #ed1655;
+  --pink-light: #fff0f5;
+  --cream: #fffdf9;
+  --text: #102b48;
+}
+
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--cream);
+}
+
+.container {
+  width: min(1180px, 92%);
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
