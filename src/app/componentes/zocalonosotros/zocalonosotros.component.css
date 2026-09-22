@@ -1,0 +1,64 @@
+.benefits {
+
+  padding: 55px 0;
+
+  background: white;
+
+}
+
+
+.benefits-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+}
+
+
+.benefit {
+
+  text-align: center;
+
+  padding: 10px 30px;
+
+  border-right: 1px solid #efc6d2;
+
+}
+
+
+.benefit:last-child {
+
+  border-right: none;
+
+}
+
+
+.benefit-icon {
+
+  color: var(--pink);
+
+  font-size: 38px;
+
+  margin-bottom: 8px;
+
+}
+
+
+.benefit h3 {
+
+  color: var(--blue);
+
+  font-size: 16px;
+
+  margin-bottom: 7px;
+
+}
+
+
+.benefit p {
+
+  font-size: 13px;
+
+}

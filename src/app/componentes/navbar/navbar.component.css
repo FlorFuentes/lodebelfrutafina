@@ -1,37 +1,293 @@
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
-    width: 100%;
-    padding: 0px;
-    min-height: 60px;
-    background: rgba(0, 0, 0, 0.083);
-    box-shadow: 2px 0px 4px 3px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-  
+  width: 100%;
+  height: 76px;
+  padding: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+
+.navbar .container {
+  height: 76px;
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.logo-img-navbar {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* =========================
+   MENÚ DESKTOP
+========================= */
+
+.menu {
+  margin-left: auto;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.nav-link {
+  position: relative;
+  display: block;
+
+  color: #092c50 !important;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  padding: 30px 18px !important;
+
+  letter-spacing: 0.5px;
+
+  transition: color 0.3s ease;
+}
+
+
+/* Línea rosa */
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+  bottom: 14px;
+
+  height: 3px;
+
+  background-color: #ed1655;
+
+  transform: scaleX(0);
+
+  transform-origin: center;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* Hover */
+
+.nav-link:hover {
+  color: #ed1655 !important;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp-item {
+  margin-left: 15px;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ed1655;
+  color: #ffffff !important;
+
+  border: 2px solid #ed1655;
+  border-radius: 30px;
+
+  padding: 10px 22px;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #c90045;
+  border-color: #c90045;
+
+  color: #ffffff !important;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   HAMBURGUESA
+========================= */
+
+.menu-toggle {
+  display: none;
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  background: transparent;
+
+  padding: 8px;
+
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+
+  width: 28px;
+  height: 3px;
+
+  margin: 5px auto;
+
+  background-color: #092c50;
+
+  border-radius: 3px;
+
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover span {
+  background-color: #ed1655;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991.98px) {
+
+  .navbar {
+    height: 70px;
   }
+
   .logo-img-navbar {
-    width: 59px;
-    height: auto;
+    width: 85px;
+    height: 85px;
+    margin-top: 8px;
   }
-  
+
+  /* Mostrar hamburguesa */
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* MENÚ CERRADO */
+
+  .menu {
+    display: none !important;
+
+    position: absolute;
+
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+
+    background-color: #ffffff;
+
+    padding: 15px 20px 25px;
+
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  /* MENÚ ABIERTO */
+
+  .menu.menu-abierto {
+    display: block !important;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
   .nav-link {
-    color: #fff2dc;
-    margin: 0px 0px;
-    padding: 30px 30px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    letter-spacing: 2px;
-    font-variant:all-petite-caps;
+    padding: 13px 10px !important;
   }
-  
-  a.nav-link:hover {
-    transform: scale(1.10);
-    border-bottom: 3px solid white;
+
+  .nav-link::after {
+    left: 30%;
+    right: 30%;
+    bottom: 5px;
   }
-  
-  /* cambio de color navbar */
-  
-  .navbar-black {
-    background-color: rgb(0, 0, 0);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+
+  .whatsapp-item {
+    margin: 10px 0 0;
   }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 575.98px) {
+
+  .navbar {
+    height: 65px;
+  }
+
+  .logo-img-navbar {
+    width: 75px;
+    height: 75px;
+    margin-top: 5px;
+  }
+
+  .menu {
+    top: 65px;
+    padding: 15px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+
+}

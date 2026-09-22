@@ -1,0 +1,168 @@
+.about-section {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  min-height: 470px;
+
+  background: #fff7f5;
+
+}
+
+
+.about-image {
+
+  position: relative;
+
+  min-height: 470px;
+
+  overflow: hidden;
+
+}
+
+
+.about-image > img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+}
+
+
+.about-phrase {
+
+  position: absolute;
+
+  bottom: 45px;
+
+  right: 45px;
+
+  max-width: 220px;
+
+  text-align: center;
+
+  color: white;
+
+  font-family: 'Pacifico', cursive;
+
+  font-size: 24px;
+
+  line-height: 1.3;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, .4);
+
+}
+
+
+.about-phrase strong,
+.about-phrase span {
+
+  display: block;
+
+}
+
+
+.about-phrase small {
+
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 25px;
+
+}
+
+
+.about-content {
+
+  position: relative;
+
+  padding: 60px 8%;
+
+}
+
+
+.about-content .section-title {
+
+  justify-content: flex-start;
+
+  gap: 20px;
+
+}
+
+
+.about-content .section-title h2 {
+
+  font-size: 38px;
+
+}
+
+
+.about-content .section-title span {
+
+  width: 55px;
+
+}
+
+
+.about-content > p {
+
+  font-size: 15px;
+
+  line-height: 1.65;
+
+  margin-bottom: 15px;
+
+}
+
+
+.about-highlight {
+
+  margin-top: 25px;
+
+  padding: 15px 20px;
+
+  border-left: 3px solid var(--pink);
+
+  color: var(--blue);
+
+  font-family: 'Pacifico', cursive;
+
+  font-size: 20px;
+
+  line-height: 1.4;
+
+}
+
+
+.patagonia-badge {
+
+  position: absolute;
+
+  right: 7%;
+
+  bottom: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--blue);
+
+  text-align: center;
+
+}
+
+
+.mountain {
+
+  font-size: 38px;
+
+}
