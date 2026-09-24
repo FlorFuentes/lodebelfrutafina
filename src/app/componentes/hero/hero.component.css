@@ -30,9 +30,9 @@
     linear-gradient(
       90deg,
       rgba(220, 236, 247, 0.97) 0%,
-      rgba(220, 236, 247, 0.88) 30%,
-      rgba(220, 236, 247, 0.45) 55%,
-      rgba(220, 236, 247, 0.05) 78%
+      rgba(220, 236, 247, 0.88) 8%,
+      rgba(220, 236, 247, 0.45) 30%,
+      rgba(220, 236, 247, 0.05) 50%
     );
 
   z-index: 1;
@@ -60,7 +60,7 @@
 ========================= */
 
 .hero-text {
-  max-width: 590px;
+  max-width: 560px;
 }
 
 
@@ -97,7 +97,7 @@
    TÍTULO
 ========================= */
 
-.hero h1 {
+/* .hero h1 {
   font-family: 'Pacifico', cursive;
 
   font-size: clamp(45px, 6vw, 76px);
@@ -109,7 +109,24 @@
   color: var(--blue);
 
   margin: 0;
+} */
+
+.hero h1 {
+  font-family: 'Lobster', cursive;
+
+  font-size: clamp(45px, 6vw, 76px);
+
+  line-height: 1.08;
+
+  font-weight: 400;
+
+  max-width: 480px;
+
+  color: var(--blue);
+
+  margin: 0;
 }
+
 
 .hero h1 span {
   display: block;
