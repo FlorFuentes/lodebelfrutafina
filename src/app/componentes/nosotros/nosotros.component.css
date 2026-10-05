@@ -1,69 +1,112 @@
+/* =====================================================
+   NOSOTROS
+===================================================== */
+
 .about-section {
 
   display: grid;
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 42% 58%;
 
-  min-height: 470px;
+  min-height: 430px;
 
-  background: #fff7f5;
+  background: #fff8f6;
 
+  overflow: hidden;
 }
 
+
+/* =====================================================
+   IMAGEN
+===================================================== */
 
 .about-image {
 
   position: relative;
 
-  min-height: 470px;
+  min-height: 430px;
 
   overflow: hidden;
 
+  z-index: 2;
 }
 
 
 .about-image > img {
 
   width: 100%;
-
   height: 100%;
+
+  display: block;
 
   object-fit: cover;
 
+  object-position: center;
 }
 
+
+/* =====================================================
+   CURVA ENTRE FOTO Y CONTENIDO
+===================================================== */
+
+.about-image::after {
+
+  content: "";
+
+  position: absolute;
+
+  top: -5%;
+
+  right: -70px;
+
+  width: 130px;
+
+  height: 110%;
+
+  background: #fff8f6;
+
+  border-radius: 50%;
+
+  z-index: 3;
+}
+
+
+/* =====================================================
+   FRASE SOBRE LA FOTO
+===================================================== */
 
 .about-phrase {
 
   position: absolute;
 
-  bottom: 45px;
-
   right: 45px;
 
-  max-width: 220px;
+  top: 62%;
+
+  transform: translateY(-50%);
+
+  width: 155px;
 
   text-align: center;
 
-  color: white;
+  color: #ffffff;
 
-  font-family: 'Pacifico', cursive;
+  font-family: "Caveat Brush", cursive;
 
-  font-size: 24px;
+  font-size: 20px;
 
-  line-height: 1.3;
+  line-height: 1.15;
 
   text-shadow:
-    0 2px 8px rgba(0, 0, 0, .4);
+    0 2px 6px rgba(0, 0, 0, .45);
 
+  z-index: 4;
 }
 
 
-.about-phrase strong,
 .about-phrase span {
 
   display: block;
-
 }
 
 
@@ -71,98 +114,573 @@
 
   display: block;
 
-  margin-top: 5px;
+  margin-top: 7px;
+
+  font-family: Arial, sans-serif;
 
   font-size: 25px;
-
 }
 
+
+/* =====================================================
+   CONTENIDO DERECHO
+===================================================== */
 
 .about-content {
 
   position: relative;
 
-  padding: 60px 8%;
+  min-width: 0;
 
-}
-
-
-.about-content .section-title {
-
-  justify-content: flex-start;
-
-  gap: 20px;
-
-}
-
-
-.about-content .section-title h2 {
-
-  font-size: 38px;
-
-}
-
-
-.about-content .section-title span {
-
-  width: 55px;
-
-}
-
-
-.about-content > p {
-
-  font-size: 15px;
-
-  line-height: 1.65;
-
-  margin-bottom: 15px;
-
-}
-
-
-.about-highlight {
-
-  margin-top: 25px;
-
-  padding: 15px 20px;
-
-  border-left: 3px solid var(--pink);
+  padding: 25px 5% 18px;
 
   color: var(--blue);
-
-  font-family: 'Pacifico', cursive;
-
-  font-size: 20px;
-
-  line-height: 1.4;
-
 }
 
 
-.patagonia-badge {
+/* =====================================================
+   TÍTULO
+===================================================== */
 
-  position: absolute;
-
-  right: 7%;
-
-  bottom: 30px;
+.section-title {
 
   display: flex;
 
   align-items: center;
 
-  gap: 10px;
+  justify-content: center;
+
+  gap: 16px;
+
+  margin-bottom: 13px;
+}
+
+
+.section-title h2 {
+
+  margin: 0;
 
   color: var(--blue);
 
-  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 38px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+.title-line {
+
+  display: block;
+
+  width: 65px;
+
+  height: 2px;
+
+  background-color: var(--pink);
+
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.about-text {
+
+  max-width: 620px;
+
+  margin: 0 auto;
+}
+
+
+.about-text p {
+
+  margin: 0 0 10px;
+
+  color: var(--blue);
+
+  font-size: 14px;
+
+  line-height: 1.35;
+}
+
+
+.about-text strong {
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   PARTE INFERIOR
+===================================================== */
+
+.about-lower {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  max-width: 620px;
+
+  margin: 14px auto 0;
+}
+
+
+/* =====================================================
+   FRASE DESTACADA
+===================================================== */
+
+.about-highlight {
+
+  flex: 1;
+
+  min-width: 0;
+
+  padding-left: 16px;
+
+  border-left: 3px solid var(--pink);
+
+  color: var(--blue);
+}
+
+
+.highlight-text {
+
+  font-family: "Caveat Brush", cursive;
+
+  font-size: 18px;
+
+  line-height: 1.25;
+
+  text-align: left;
+}
+
+
+/* =====================================================
+   LÍNEA + CORAZÓN
+===================================================== */
+
+.highlight-decoration {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 7px;
+
+  margin-left: 5px;
+}
+
+
+.highlight-decoration span:not(.highlight-heart) {
+
+  display: block;
+
+  width: 70px;
+
+  height: 2px;
+
+  background-color: var(--blue);
+}
+
+
+.highlight-heart {
+
+  color: var(--blue);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 20px;
+
+  line-height: 1;
+}
+
+
+/* =====================================================
+   LOGO PATAGONIA
+===================================================== */
+
+.patagonia-badge {
+
+  flex: 0 0 135px;
+
+  width: 135px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.patagonia-badge img {
+
+  width: 135px;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991.98px) {
+
+  .about-section {
+
+    grid-template-columns: 45% 55%;
+
+    min-height: 460px;
+  }
+
+
+  .about-image {
+
+    min-height: 460px;
+  }
+
+
+  .about-content {
+
+    padding: 30px 4%;
+  }
+
+
+  .section-title {
+
+    gap: 10px;
+  }
+
+
+  .section-title h2 {
+
+    font-size: 32px;
+  }
+
+
+  .title-line {
+
+    width: 45px;
+  }
+
+
+  .about-text p {
+
+    font-size: 13px;
+
+    line-height: 1.4;
+  }
+
+
+  .about-lower {
+
+    gap: 10px;
+  }
+
+
+  .highlight-text {
+
+    font-size: 16px;
+  }
+
+
+  .highlight-decoration span:not(.highlight-heart) {
+
+    width: 50px;
+  }
+
+
+  .patagonia-badge {
+
+    flex-basis: 105px;
+
+    width: 105px;
+  }
+
+
+  .patagonia-badge img {
+
+    width: 105px;
+  }
 
 }
 
 
-.mountain {
+/* =====================================================
+   CELULAR
+===================================================== */
 
-  font-size: 38px;
+@media (max-width: 767.98px) {
+
+  .about-section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: auto;
+  }
+
+
+  /* -------------------------
+     FOTO
+  ------------------------- */
+
+  .about-image {
+
+    width: 100%;
+
+    height: 330px;
+
+    min-height: 330px;
+  }
+
+
+  .about-image > img {
+
+    object-position: center;
+  }
+
+
+  /* Sin curva en celular */
+
+  .about-image::after {
+
+    display: none;
+  }
+
+
+  /* Frase */
+
+  .about-phrase {
+
+    right: 25px;
+
+    top: auto;
+
+    bottom: 30px;
+
+    transform: none;
+
+    width: 150px;
+
+    font-size: 18px;
+  }
+
+
+  /* -------------------------
+     CONTENIDO
+  ------------------------- */
+
+  .about-content {
+
+    padding: 35px 25px 35px;
+  }
+
+
+  /* -------------------------
+     TÍTULO
+  ------------------------- */
+
+  .section-title {
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .section-title h2 {
+
+    font-size: 32px;
+  }
+
+
+  .title-line {
+
+    width: 40px;
+  }
+
+
+  /* -------------------------
+     TEXTO
+  ------------------------- */
+
+  .about-text {
+
+    max-width: 100%;
+  }
+
+
+  .about-text p {
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+  }
+
+
+  /* -------------------------
+     PARTE INFERIOR
+  ------------------------- */
+
+  .about-lower {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 25px;
+  }
+
+
+  /* -------------------------
+     FRASE
+  ------------------------- */
+
+  .about-highlight {
+
+    width: 100%;
+
+    padding-left: 15px;
+  }
+
+
+  .highlight-text {
+
+    font-size: 19px;
+
+    line-height: 1.3;
+  }
+
+
+  .highlight-decoration {
+
+    margin-top: 10px;
+  }
+
+
+  .highlight-decoration span:not(.highlight-heart) {
+
+    width: 70px;
+  }
+
+
+  /* -------------------------
+     LOGO PATAGONIA
+  ------------------------- */
+
+  .patagonia-badge {
+
+    flex: none;
+
+    width: 130px;
+  }
+
+
+  .patagonia-badge img {
+
+    width: 130px;
+  }
+
+}
+
+
+/* =====================================================
+   CELULAR PEQUEÑO
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .about-image {
+
+    height: 290px;
+
+    min-height: 290px;
+  }
+
+
+  .about-phrase {
+
+    right: 15px;
+
+    bottom: 25px;
+
+    width: 135px;
+
+    font-size: 16px;
+  }
+
+
+  .section-title h2 {
+
+    font-size: 28px;
+  }
+
+
+  .title-line {
+
+    width: 30px;
+  }
+
+
+  .about-content {
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+  }
+
+
+  .highlight-text {
+
+    font-size: 17px;
+  }
+
+
+  .highlight-decoration span:not(.highlight-heart) {
+
+    width: 55px;
+  }
+
+
+  .patagonia-badge {
+
+    width: 115px;
+  }
+
+
+  .patagonia-badge img {
+
+    width: 115px;
+  }
 
 }
