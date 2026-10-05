@@ -1,9 +1,12 @@
+/* =========================
+   ZÓCALO / BENEFICIOS
+========================= */
+
 .benefits {
 
-  padding: 55px 0;
+  padding: 45px 0;
 
-  background: white;
-
+  background: #ffffff;
 }
 
 
@@ -11,9 +14,9 @@
 
   display: grid;
 
-  grid-template-columns:
-    repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
+  align-items: stretch;
 }
 
 
@@ -24,41 +27,177 @@
   padding: 10px 30px;
 
   border-right: 1px solid #efc6d2;
-
 }
 
 
 .benefit:last-child {
 
   border-right: none;
-
 }
 
+
+/* ICONOS */
 
 .benefit-icon {
 
-  color: var(--pink);
+  display: flex;
 
-  font-size: 38px;
+  align-items: center;
+
+  justify-content: center;
+
+  height: 45px;
 
   margin-bottom: 8px;
 
+  color: var(--pink);
+
+  font-size: 34px;
 }
 
 
+/* TÍTULOS */
+
 .benefit h3 {
+
+  margin: 0 0 7px;
 
   color: var(--blue);
 
   font-size: 16px;
 
-  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+
+/* DESCRIPCIÓN */
+
+.benefit p {
+
+  margin: 0;
+
+  color: var(--blue);
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991.98px) {
+
+  .benefit {
+
+    padding: 10px 15px;
+  }
+
+  .benefit-icon {
+
+    font-size: 30px;
+  }
+
+  .benefit h3 {
+
+    font-size: 15px;
+  }
+
+  .benefit p {
+
+    font-size: 12px;
+  }
 
 }
 
 
-.benefit p {
+/* =========================
+   CELULAR
+========================= */
 
-  font-size: 13px;
+@media (max-width: 767.98px) {
+
+  .benefits {
+
+    padding: 35px 0;
+  }
+
+
+  .benefits-grid {
+
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 25px;
+  }
+
+
+  .benefit {
+
+    padding: 10px 15px;
+
+    border-right: 1px solid #efc6d2;
+  }
+
+
+  /* Quitamos el borde del segundo elemento
+     de cada fila */
+
+  .benefit:nth-child(2),
+  .benefit:nth-child(4) {
+
+    border-right: none;
+  }
+
+
+  .benefit-icon {
+
+    font-size: 30px;
+  }
+
+
+  .benefit h3 {
+
+    font-size: 14px;
+  }
+
+
+  .benefit p {
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================
+   CELULAR PEQUEÑO
+========================= */
+
+@media (max-width: 400px) {
+
+  .benefits-grid {
+
+    column-gap: 0;
+  }
+
+
+  .benefit {
+
+    padding: 10px 8px;
+  }
+
+
+  .benefit h3 {
+
+    font-size: 13px;
+  }
+
+
+  .benefit p {
+
+    font-size: 11px;
+  }
 
 }

@@ -1,0 +1,855 @@
+/* =====================================================
+   ENTREGAS Y ENVÍOS
+===================================================== */
+
+.delivery-section {
+
+  width: 100%;
+
+  background: #fff8f6;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   CONTENEDOR PRINCIPAL
+===================================================== */
+
+.delivery-container {
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 50% 50%;
+
+  min-height: 300px;
+}
+
+
+/* =====================================================
+   BARILOCHE - IMAGEN
+===================================================== */
+
+.delivery-bariloche {
+
+  position: relative;
+
+  min-height: 300px;
+
+  overflow: hidden;
+}
+
+
+.delivery-image {
+
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  display: block;
+}
+
+
+/* Capa para mejorar la lectura */
+
+.delivery-image-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(0, 32, 65, .10),
+      rgba(0, 32, 65, .20)
+    );
+
+  z-index: 1;
+}
+
+
+/* =====================================================
+   CONTENIDO SOBRE BARILOCHE
+===================================================== */
+
+.bariloche-content {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 25px 8%;
+
+  color: white;
+}
+
+
+/* =====================================================
+   MARCADOR
+===================================================== */
+
+.bariloche-location {
+
+  position: absolute;
+
+  left: 20%;
+
+  top: 28%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 42px;
+
+  height: 42px;
+
+  background: white;
+
+  color: #183f67;
+
+  border-radius: 50%;
+
+  font-size: 22px;
+
+  box-shadow: 0 3px 8px rgba(0,0,0,.20);
+}
+
+
+/* =====================================================
+   TEXTO BARILOCHE
+===================================================== */
+
+.bariloche-text {
+
+  margin-left: 25%;
+
+  margin-top: 5px;
+
+  text-align: left;
+
+  text-shadow:
+    0 2px 5px rgba(0,0,0,.35);
+}
+
+
+.bariloche-small {
+
+  margin: 0;
+
+  font-family: "Caveat Brush", cursive;
+
+  font-size: 27px;
+
+  line-height: 1;
+}
+
+
+.bariloche-text h2 {
+
+  margin: 0;
+
+  color: white;
+
+  font-family: "Caveat Brush", cursive;
+
+  font-size: clamp(42px, 4vw, 58px);
+
+  line-height: .95;
+
+  font-weight: 400;
+}
+
+
+.bariloche-frequency {
+
+  margin: 8px 0 0;
+
+  color: white;
+
+  font-family: "Caveat Brush", cursive;
+
+  font-size: 23px;
+
+  line-height: 1;
+}
+
+
+/* =====================================================
+   MONTAÑA
+===================================================== */
+
+.bariloche-mountain {
+
+  position: absolute;
+
+  left: 27%;
+
+  bottom: 27px;
+
+  color: white;
+
+  font-size: 34px;
+
+  transform: rotate(-3deg);
+
+  text-shadow:
+    0 2px 5px rgba(0,0,0,.3);
+}
+
+
+/* =====================================================
+   CAMIÓN
+===================================================== */
+
+.bariloche-truck {
+
+  position: absolute;
+
+  left: 35%;
+
+  bottom: 25px;
+
+  color: white;
+
+  font-size: 42px;
+
+  transform: rotate(-3deg);
+
+  text-shadow:
+    0 2px 5px rgba(0,0,0,.3);
+}
+
+
+/* =====================================================
+   INFORMACIÓN DERECHA
+===================================================== */
+
+.delivery-info {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 35px 7%;
+
+  background: #fff8f6;
+
+  color: var(--blue);
+}
+
+
+.delivery-info-content {
+
+  width: 100%;
+
+  max-width: 580px;
+}
+
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+.delivery-heading {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+
+.delivery-pin {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 48px;
+
+  min-width: 48px;
+
+  height: 48px;
+
+  color: white;
+
+  background: var(--pink);
+
+  border-radius: 50% 50% 50% 0;
+
+  transform: rotate(-45deg);
+}
+
+
+.delivery-pin i {
+
+  transform: rotate(45deg);
+
+  font-size: 22px;
+}
+
+
+.delivery-heading h2 {
+
+  margin: 0 0 7px;
+
+  color: var(--blue);
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 25px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   LOCALIDADES
+===================================================== */
+
+.delivery-cities {
+
+  margin: 0;
+
+  color: var(--blue);
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+.delivery-cities span {
+
+  white-space: nowrap;
+}
+
+
+.delivery-cities b {
+
+  color: var(--pink);
+
+  margin: 0 7px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   CONSULTA
+===================================================== */
+
+.delivery-question {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin: 12px 0 20px 2px;
+}
+
+
+.delivery-truck-icon {
+
+  color: var(--blue);
+
+  font-size: 32px;
+
+  min-width: 40px;
+
+  text-align: center;
+}
+
+
+.delivery-question p {
+
+  margin: 0;
+
+  color: var(--blue);
+
+  font-size: 14px;
+
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   BOTÓN
+===================================================== */
+
+.delivery-zone-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-left: 58px;
+
+  padding: 9px 22px;
+
+  background: var(--pink);
+
+  color: white;
+
+  border: 1px solid var(--pink);
+
+  border-radius: 25px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition: all .3s ease;
+}
+
+
+.delivery-zone-button:hover {
+
+  background: #c90046;
+
+  border-color: #c90046;
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+.delivery-zone-button i {
+
+  font-size: 17px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991.98px) {
+
+  .delivery-container {
+
+    grid-template-columns: 48% 52%;
+
+    min-height: 290px;
+  }
+
+
+  .delivery-bariloche {
+
+    min-height: 290px;
+  }
+
+
+  .bariloche-content {
+
+    padding: 20px;
+  }
+
+
+  .bariloche-location {
+
+    left: 15%;
+
+    top: 24%;
+  }
+
+
+  .bariloche-text {
+
+    margin-left: 20%;
+  }
+
+
+  .bariloche-small {
+
+    font-size: 23px;
+  }
+
+
+  .bariloche-text h2 {
+
+    font-size: 43px;
+  }
+
+
+  .bariloche-frequency {
+
+    font-size: 19px;
+  }
+
+
+  .bariloche-mountain {
+
+    left: 23%;
+
+    bottom: 20px;
+  }
+
+
+  .bariloche-truck {
+
+    left: 31%;
+
+    bottom: 18px;
+
+    font-size: 35px;
+  }
+
+
+  .delivery-info {
+
+    padding: 25px 5%;
+  }
+
+
+  .delivery-heading h2 {
+
+    font-size: 21px;
+  }
+
+
+  .delivery-cities {
+
+    font-size: 12px;
+  }
+
+
+  .delivery-question p {
+
+    font-size: 12px;
+  }
+
+
+  .delivery-zone-button {
+
+    margin-left: 53px;
+  }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 767.98px) {
+
+  .delivery-container {
+
+    display: flex;
+
+    flex-direction: column;
+  }
+
+
+  /* FOTO */
+
+  .delivery-bariloche {
+
+    width: 100%;
+
+    min-height: 280px;
+
+    height: 280px;
+  }
+
+
+  .delivery-image {
+
+    object-position: center;
+  }
+
+
+  .bariloche-content {
+
+    padding: 20px;
+  }
+
+
+  .bariloche-location {
+
+    left: 18%;
+
+    top: 22%;
+
+    width: 38px;
+
+    height: 38px;
+
+    font-size: 19px;
+  }
+
+
+  .bariloche-text {
+
+    margin-left: 28%;
+
+    margin-top: 0;
+  }
+
+
+  .bariloche-small {
+
+    font-size: 23px;
+  }
+
+
+  .bariloche-text h2 {
+
+    font-size: 47px;
+  }
+
+
+  .bariloche-frequency {
+
+    font-size: 20px;
+
+    margin-top: 7px;
+  }
+
+
+  .bariloche-mountain {
+
+    left: 24%;
+
+    bottom: 22px;
+
+    font-size: 29px;
+  }
+
+
+  .bariloche-truck {
+
+    left: 35%;
+
+    bottom: 20px;
+
+    font-size: 36px;
+  }
+
+
+  /* INFORMACIÓN */
+
+  .delivery-info {
+
+    width: 100%;
+
+    padding: 35px 25px 40px;
+
+    min-height: auto;
+  }
+
+
+  .delivery-info-content {
+
+    max-width: 100%;
+  }
+
+
+  .delivery-heading {
+
+    align-items: flex-start;
+
+    gap: 13px;
+  }
+
+
+  .delivery-pin {
+
+    width: 43px;
+
+    min-width: 43px;
+
+    height: 43px;
+  }
+
+
+  .delivery-pin i {
+
+    font-size: 19px;
+  }
+
+
+  .delivery-heading h2 {
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+  }
+
+
+  .delivery-cities {
+
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+
+  .delivery-cities b {
+
+    margin: 0 4px;
+  }
+
+
+  .delivery-question {
+
+    margin-top: 20px;
+
+    margin-bottom: 20px;
+
+    gap: 12px;
+  }
+
+
+  .delivery-truck-icon {
+
+    font-size: 28px;
+
+    min-width: 35px;
+  }
+
+
+  .delivery-question p {
+
+    font-size: 13px;
+  }
+
+
+  .delivery-zone-button {
+
+    margin-left: 47px;
+
+    padding: 10px 20px;
+
+    font-size: 13px;
+  }
+
+}
+
+
+/* =====================================================
+   CELULAR PEQUEÑO
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .delivery-bariloche {
+
+    height: 250px;
+
+    min-height: 250px;
+  }
+
+
+  .bariloche-location {
+
+    left: 14%;
+
+    top: 20%;
+  }
+
+
+  .bariloche-text {
+
+    margin-left: 25%;
+  }
+
+
+  .bariloche-small {
+
+    font-size: 20px;
+  }
+
+
+  .bariloche-text h2 {
+
+    font-size: 41px;
+  }
+
+
+  .bariloche-frequency {
+
+    font-size: 18px;
+  }
+
+
+  .bariloche-mountain {
+
+    left: 20%;
+
+    bottom: 18px;
+  }
+
+
+  .bariloche-truck {
+
+    left: 31%;
+
+    bottom: 17px;
+
+    font-size: 32px;
+  }
+
+
+  .delivery-info {
+
+    padding: 30px 18px 35px;
+  }
+
+
+  .delivery-heading h2 {
+
+    font-size: 20px;
+  }
+
+
+  .delivery-cities {
+
+    font-size: 12px;
+  }
+
+
+  .delivery-zone-button {
+
+    margin-left: 45px;
+  }
+
+}

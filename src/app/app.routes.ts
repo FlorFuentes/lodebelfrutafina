@@ -4,6 +4,7 @@ import { HeroComponent } from './componentes/hero/hero.component';
 import { ProductosComponent} from './componentes/productos/productos.component';
 import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
 import { ZocalonosotrosComponent } from './componentes/zocalonosotros/zocalonosotros.component';
+import {EnviosComponent} from './componentes/envios/envios.component'
 
 
 export const routes: Routes = [
@@ -12,4 +13,5 @@ export const routes: Routes = [
     {path:'productos', component:ProductosComponent},
     {path:'nosotros', component:NosotrosComponent},
     {path: 'zocalonosotros', component:ZocalonosotrosComponent},
+    {path:'envios', component: EnviosComponent},
 ];
