@@ -1,855 +1,461 @@
-/* =====================================================
-   ENTREGAS Y ENVÍOS
-===================================================== */
 
-.delivery-section {
+/* ==========================
+   ENVÍOS Y ENTREGAS
+========================== */
 
+.shipping-section {
+  display: grid;
+  grid-template-columns: 52% 48%;
   width: 100%;
+  min-height: 235px;
+  overflow: hidden;
+  background: #fff8f6;
+  position: relative;
+}
 
+/* ==========================
+   FOTO DE BARILOCHE
+========================== */
+
+.shipping-image {
+  position: relative;
+  min-width: 0;
+  min-height: 235px;
+  overflow: hidden;
+  background: #123c59;
+}
+
+.shipping-landscape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*
+  Curva del lado derecho de la foto.
+  El borde se desplaza hacia la izquierda
+  en la zona superior y vuelve a la derecha
+  en la zona inferior.
+*/
+.shipping-image::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -8%;
+  right: -1px;
+  width: 70px;
+  height: 116%;
   background: #fff8f6;
 
-  overflow: hidden;
+  clip-path: polygon(
+    100% 0,
+    100% 100%,
+    0 100%,
+    18% 91%,
+    32% 80%,
+    42% 68%,
+    48% 55%,
+    48% 43%,
+    42% 30%,
+    30% 18%,
+    15% 7%,
+    10% 0
+  );
+
+ /*  border-radius: 45% 0 0 45%; */
 }
 
+/* ==========================
+   TEXTO SOBRE LA FOTO
+========================== */
 
-/* =====================================================
-   CONTENEDOR PRINCIPAL
-===================================================== */
+.shipping-image-content {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  color: #fff;
+}
 
-.delivery-container {
-
-  width: 100%;
-
+.shipping-location-icon {
+  position: absolute;
+  left: 25%;
+  top: 16%;
+  width: 35px;
+  height: 35px;
   display: grid;
-
-  grid-template-columns: 50% 50%;
-
-  min-height: 300px;
-}
-
-
-/* =====================================================
-   BARILOCHE - IMAGEN
-===================================================== */
-
-.delivery-bariloche {
-
-  position: relative;
-
-  min-height: 300px;
-
-  overflow: hidden;
-}
-
-
-.delivery-image {
-
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-
-  height: 100%;
-
-  object-fit: cover;
-
-  object-position: center;
-
-  display: block;
-}
-
-
-/* Capa para mejorar la lectura */
-
-.delivery-image-overlay {
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-
-    linear-gradient(
-      90deg,
-      rgba(0, 32, 65, .10),
-      rgba(0, 32, 65, .20)
-    );
-
-  z-index: 1;
-}
-
-
-/* =====================================================
-   CONTENIDO SOBRE BARILOCHE
-===================================================== */
-
-.bariloche-content {
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 2;
-
-  display: flex;
-
-  align-items: center;
-
-  padding: 25px 8%;
-
-  color: white;
-}
-
-
-/* =====================================================
-   MARCADOR
-===================================================== */
-
-.bariloche-location {
-
-  position: absolute;
-
-  left: 20%;
-
-  top: 28%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  width: 42px;
-
-  height: 42px;
-
-  background: white;
-
-  color: #183f67;
-
+  place-items: center;
   border-radius: 50%;
-
-  font-size: 22px;
-
-  box-shadow: 0 3px 8px rgba(0,0,0,.20);
+  background: #fff;
+  color: #123e63;
+  font-size: 19px;
 }
 
-
-/* =====================================================
-   TEXTO BARILOCHE
-===================================================== */
-
-.bariloche-text {
-
-  margin-left: 25%;
-
-  margin-top: 5px;
-
-  text-align: left;
-
-  text-shadow:
-    0 2px 5px rgba(0,0,0,.35);
+.shipping-title {
+  position: absolute;
+  left: 37%;
+  top: 16%;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
+.shipping-title > span {
+  display: block;
+  font-size: clamp(16px, 1.8vw, 25px);
+  line-height: 1.1;
+}
 
-.bariloche-small {
-
+.shipping-title h2 {
   margin: 0;
+  font-family: "Pacifico", cursive;
+  font-size: clamp(30px, 3.4vw, 48px);
+  font-weight: 400;
+  line-height: 1.12;
+  color: #fff;
+}
 
-  font-family: "Caveat Brush", cursive;
+.shipping-title p {
+  margin: 3px 0 0;
+  font-size: clamp(13px, 1.4vw, 19px);
+  line-height: 1.2;
+}
 
-  font-size: 27px;
+.shipping-route-icons {
+  position: absolute;
+  left: 38%;
+  bottom: 12%;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: #fff;
+  font-size: clamp(24px, 2.7vw, 36px);
+}
 
+/* ==========================
+   PANEL DERECHO
+========================== */
+
+.shipping-info {
+  position: relative;
+  min-width: 0;
+  padding: 28px 6% 20px 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--blue, #092e52);
+  background: #fff8f6;
+}
+
+.shipping-info-main {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.shipping-pin {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 57px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--pink, #ed1655);
+}
+
+.shipping-pin > i {
+  position: relative;
+  z-index: 2;
+  font-size: 47px;
   line-height: 1;
-}
-
-
-.bariloche-text h2 {
-
-  margin: 0;
-
-  color: white;
-
-  font-family: "Caveat Brush", cursive;
-
-  font-size: clamp(42px, 4vw, 58px);
-
-  line-height: .95;
-
   font-weight: 400;
 }
 
-
-.bariloche-frequency {
-
-  margin: 8px 0 0;
-
-  color: white;
-
-  font-family: "Caveat Brush", cursive;
-
-  font-size: 23px;
-
-  line-height: 1;
-}
-
-
-/* =====================================================
-   MONTAÑA
-===================================================== */
-
-.bariloche-mountain {
-
+/* Sombra rosa difuminada debajo del marcador */
+.shipping-pin .pin-shadow {
   position: absolute;
-
-  left: 27%;
-
-  bottom: 27px;
-
-  color: white;
-
-  font-size: 34px;
-
-  transform: rotate(-3deg);
-
-  text-shadow:
-    0 2px 5px rgba(0,0,0,.3);
+  z-index: 1;
+  width: 34px;
+  height: 12px;
+  left: 7px;
+  bottom: 0;
+  border-radius: 50%;
+  background: rgba(237, 22, 85, 0.20);
+  filter: blur(5px);
 }
 
-
-/* =====================================================
-   CAMIÓN
-===================================================== */
-
-.bariloche-truck {
-
-  position: absolute;
-
-  left: 35%;
-
-  bottom: 25px;
-
-  color: white;
-
-  font-size: 42px;
-
-  transform: rotate(-3deg);
-
-  text-shadow:
-    0 2px 5px rgba(0,0,0,.3);
+.shipping-destinations {
+  min-width: 0;
 }
 
-
-/* =====================================================
-   INFORMACIÓN DERECHA
-===================================================== */
-
-.delivery-info {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 35px 7%;
-
-  background: #fff8f6;
-
-  color: var(--blue);
-}
-
-
-.delivery-info-content {
-
-  width: 100%;
-
-  max-width: 580px;
-}
-
-
-/* =====================================================
-   TÍTULO
-===================================================== */
-
-.delivery-heading {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 15px;
-
-  margin-bottom: 20px;
-}
-
-
-.delivery-pin {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  width: 48px;
-
-  min-width: 48px;
-
-  height: 48px;
-
-  color: white;
-
-  background: var(--pink);
-
-  border-radius: 50% 50% 50% 0;
-
-  transform: rotate(-45deg);
-}
-
-
-.delivery-pin i {
-
-  transform: rotate(45deg);
-
-  font-size: 22px;
-}
-
-
-.delivery-heading h2 {
-
-  margin: 0 0 7px;
-
-  color: var(--blue);
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 25px;
-
+.shipping-destinations h3 {
+  margin: 0 0 6px;
+  color: var(--blue, #092e52);
+  font-family: Georgia, serif;
   font-weight: 700;
+  font-size: clamp(18px, 2vw, 27px);
+  line-height: 1.2;
 }
 
-
-/* =====================================================
-   LOCALIDADES
-===================================================== */
-
-.delivery-cities {
-
+.shipping-cities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px 8px;
   margin: 0;
-
-  color: var(--blue);
-
-  font-size: 14px;
-
+  font-size: clamp(12px, 1.05vw, 15px);
   line-height: 1.5;
 }
 
-
-.delivery-cities span {
-
-  white-space: nowrap;
+.shipping-cities b {
+  color: var(--pink, #ed1655);
 }
 
+/* ==========================
+   CAMIÓN Y TEXTO
+========================== */
 
-.delivery-cities b {
-
-  color: var(--pink);
-
-  margin: 0 7px;
-
-  font-weight: 700;
-}
-
-
-/* =====================================================
-   CONSULTA
-===================================================== */
-
-.delivery-question {
-
+.shipping-consult {
   display: flex;
-
   align-items: center;
-
   gap: 15px;
-
-  margin: 12px 0 20px 2px;
+  margin: 18px 0 17px;
+  padding-left: 4px;
 }
 
-
-.delivery-truck-icon {
-
-  color: var(--blue);
-
-  font-size: 32px;
-
-  min-width: 40px;
-
-  text-align: center;
+.shipping-truck {
+  flex: 0 0 auto;
+  font-size: 30px;
+  color: var(--blue, #092e52);
 }
 
-
-.delivery-question p {
-
+.shipping-consult p {
   margin: 0;
-
-  color: var(--blue);
-
-  font-size: 14px;
-
-  line-height: 1.4;
+  font-size: clamp(12px, 1.05vw, 15px);
+  line-height: 1.5;
 }
 
+/* ==========================
+   BOTÓN WHATSAPP
+========================== */
 
-/* =====================================================
-   BOTÓN
-===================================================== */
-
-.delivery-zone-button {
-
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 8px;
-
+.shipping-button {
+  align-self: flex-start;
   margin-left: 58px;
-
-  padding: 9px 22px;
-
-  background: var(--pink);
-
-  color: white;
-
-  border: 1px solid var(--pink);
-
-  border-radius: 25px;
-
-  text-decoration: none;
-
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 22px;
+  border-radius: 50px;
+  background: var(--pink, #ed1655);
+  border: 1px solid var(--pink, #ed1655);
+  color: #fff;
   font-size: 13px;
-
   font-weight: 700;
-
-  transition: all .3s ease;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
-
-.delivery-zone-button:hover {
-
-  background: #c90046;
-
-  border-color: #c90046;
-
-  color: white;
-
+.shipping-button:hover {
+  background: #c90e49;
+  border-color: #c90e49;
+  color: #fff;
   transform: translateY(-2px);
 }
 
-
-.delivery-zone-button i {
-
+.shipping-button i {
   font-size: 17px;
 }
 
+/* Decoración opcional en la esquina inferior derecha */
+.shipping-fruit-decoration {
+  position: absolute;
+  width: 48px;
+  height: auto;
+  right: 3%;
+  bottom: 8px;
+  object-fit: contain;
+}
 
-/* =====================================================
+/* ==========================
    TABLET
-===================================================== */
+========================== */
 
 @media (max-width: 991.98px) {
-
-  .delivery-container {
-
-    grid-template-columns: 48% 52%;
-
-    min-height: 290px;
-  }
-
-
-  .delivery-bariloche {
-
-    min-height: 290px;
-  }
-
-
-  .bariloche-content {
-
-    padding: 20px;
-  }
-
-
-  .bariloche-location {
-
-    left: 15%;
-
-    top: 24%;
-  }
-
-
-  .bariloche-text {
-
-    margin-left: 20%;
-  }
-
-
-  .bariloche-small {
-
-    font-size: 23px;
-  }
-
-
-  .bariloche-text h2 {
-
-    font-size: 43px;
-  }
-
-
-  .bariloche-frequency {
-
-    font-size: 19px;
-  }
-
-
-  .bariloche-mountain {
-
-    left: 23%;
-
-    bottom: 20px;
-  }
-
-
-  .bariloche-truck {
-
-    left: 31%;
-
-    bottom: 18px;
-
-    font-size: 35px;
-  }
-
-
-  .delivery-info {
-
-    padding: 25px 5%;
-  }
-
-
-  .delivery-heading h2 {
-
-    font-size: 21px;
-  }
-
-
-  .delivery-cities {
-
-    font-size: 12px;
-  }
-
-
-  .delivery-question p {
-
-    font-size: 12px;
-  }
-
-
-  .delivery-zone-button {
-
-    margin-left: 53px;
-  }
-
-}
-
-
-/* =====================================================
-   CELULAR
-===================================================== */
-
-@media (max-width: 767.98px) {
-
-  .delivery-container {
-
-    display: flex;
-
-    flex-direction: column;
-  }
-
-
-  /* FOTO */
-
-  .delivery-bariloche {
-
-    width: 100%;
-
-    min-height: 280px;
-
-    height: 280px;
-  }
-
-
-  .delivery-image {
-
-    object-position: center;
-  }
-
-
-  .bariloche-content {
-
-    padding: 20px;
-  }
-
-
-  .bariloche-location {
-
-    left: 18%;
-
-    top: 22%;
-
-    width: 38px;
-
-    height: 38px;
-
-    font-size: 19px;
-  }
-
-
-  .bariloche-text {
-
-    margin-left: 28%;
-
-    margin-top: 0;
-  }
-
-
-  .bariloche-small {
-
-    font-size: 23px;
-  }
-
-
-  .bariloche-text h2 {
-
-    font-size: 47px;
-  }
-
-
-  .bariloche-frequency {
-
-    font-size: 20px;
-
-    margin-top: 7px;
-  }
-
-
-  .bariloche-mountain {
-
-    left: 24%;
-
-    bottom: 22px;
-
-    font-size: 29px;
-  }
-
-
-  .bariloche-truck {
-
-    left: 35%;
-
-    bottom: 20px;
-
-    font-size: 36px;
-  }
-
-
-  /* INFORMACIÓN */
-
-  .delivery-info {
-
-    width: 100%;
-
-    padding: 35px 25px 40px;
-
-    min-height: auto;
-  }
-
-
-  .delivery-info-content {
-
-    max-width: 100%;
-  }
-
-
-  .delivery-heading {
-
-    align-items: flex-start;
-
-    gap: 13px;
-  }
-
-
-  .delivery-pin {
-
-    width: 43px;
-
-    min-width: 43px;
-
-    height: 43px;
-  }
-
-
-  .delivery-pin i {
-
-    font-size: 19px;
-  }
-
-
-  .delivery-heading h2 {
-
-    font-size: 22px;
-
-    margin-bottom: 8px;
-  }
-
-
-  .delivery-cities {
-
-    font-size: 13px;
-
-    line-height: 1.8;
-  }
-
-
-  .delivery-cities b {
-
-    margin: 0 4px;
-  }
-
-
-  .delivery-question {
-
-    margin-top: 20px;
-
-    margin-bottom: 20px;
-
-    gap: 12px;
-  }
-
-
-  .delivery-truck-icon {
-
-    font-size: 28px;
-
-    min-width: 35px;
-  }
-
-
-  .delivery-question p {
-
-    font-size: 13px;
-  }
-
-
-  .delivery-zone-button {
-
-    margin-left: 47px;
-
-    padding: 10px 20px;
-
-    font-size: 13px;
-  }
-
-}
-
-
-/* =====================================================
-   CELULAR PEQUEÑO
-===================================================== */
-
-@media (max-width: 400px) {
-
-  .delivery-bariloche {
-
-    height: 250px;
-
+  .shipping-section {
+    grid-template-columns: 50% 50%;
     min-height: 250px;
   }
 
+  .shipping-image {
+    min-height: 250px;
+  }
 
-  .bariloche-location {
+  .shipping-image::after {
+    width: 45px;
+  }
 
-    left: 14%;
-
+  .shipping-title {
+    left: 29%;
     top: 20%;
   }
 
-
-  .bariloche-text {
-
-    margin-left: 25%;
+  .shipping-location-icon {
+    left: 13%;
+    top: 20%;
   }
 
-
-  .bariloche-small {
-
-    font-size: 20px;
+  .shipping-route-icons {
+    left: 30%;
+    bottom: 12%;
   }
 
-
-  .bariloche-text h2 {
-
-    font-size: 41px;
+  .shipping-info {
+    padding: 25px 5% 20px 6%;
   }
 
-
-  .bariloche-frequency {
-
-    font-size: 18px;
+  .shipping-pin {
+    flex-basis: 38px;
+    width: 38px;
   }
 
-
-  .bariloche-mountain {
-
-    left: 20%;
-
-    bottom: 18px;
+  .shipping-pin > i {
+    font-size: 39px;
   }
 
-
-  .bariloche-truck {
-
-    left: 31%;
-
-    bottom: 17px;
-
-    font-size: 32px;
+  .shipping-button {
+    margin-left: 48px;
+    padding: 10px 16px;
   }
 
+  .shipping-fruit-decoration {
+    display: none;
+  }
+}
 
-  .delivery-info {
+/* ==========================
+   CELULARES
+========================== */
 
-    padding: 30px 18px 35px;
+@media (max-width: 767.98px) {
+  .shipping-section {
+    display: flex;
+    flex-direction: column;
   }
 
-
-  .delivery-heading h2 {
-
-    font-size: 20px;
+  .shipping-image {
+    width: 100%;
+    min-height: 260px;
+    height: 260px;
   }
 
-
-  .delivery-cities {
-
-    font-size: 12px;
+  /* En móvil la foto termina recta */
+  .shipping-image::after {
+    display: none;
   }
 
-
-  .delivery-zone-button {
-
-    margin-left: 45px;
+  .shipping-location-icon {
+    left: 8%;
+    top: 17%;
   }
 
+  .shipping-title {
+    left: 22%;
+    top: 17%;
+  }
+
+  .shipping-title h2 {
+    font-size: clamp(32px, 9vw, 43px);
+  }
+
+  .shipping-title > span {
+    font-size: 19px;
+  }
+
+  .shipping-title p {
+    font-size: 15px;
+  }
+
+  .shipping-route-icons {
+    left: 22%;
+    bottom: 12%;
+    font-size: 29px;
+  }
+
+  .shipping-info {
+    padding: 28px 22px 30px;
+  }
+
+  .shipping-info-main {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .shipping-destinations h3 {
+    font-size: 23px;
+  }
+
+  .shipping-cities {
+    font-size: 13px;
+    gap: 4px 7px;
+  }
+
+  .shipping-consult {
+    margin-top: 22px;
+    margin-bottom: 18px;
+    gap: 13px;
+  }
+
+  .shipping-consult p {
+    font-size: 14px;
+  }
+
+  .shipping-button {
+    align-self: center;
+    margin-left: 0;
+    padding: 12px 22px;
+  }
+}
+
+/* ==========================
+   CELULARES PEQUEÑOS
+========================== */
+
+@media (max-width: 380px) {
+  .shipping-image {
+    min-height: 230px;
+    height: 230px;
+  }
+
+  .shipping-location-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .shipping-title {
+    left: 23%;
+  }
+
+  .shipping-title h2 {
+    font-size: 31px;
+  }
+
+  .shipping-info {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .shipping-pin {
+    flex-basis: 34px;
+    width: 34px;
+  }
+
+  .shipping-pin > i {
+    font-size: 35px;
+  }
 }
